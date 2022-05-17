@@ -1,0 +1,5 @@
+install firebase
+firebase.init.js file in src directory
+** const auth = getAuth(app) and export auth**
+
+use this auth in requireAuth page to get getAuthState(auth) > user status (react firebase hooks)

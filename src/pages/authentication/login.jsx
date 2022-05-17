@@ -1,19 +1,28 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Navigate } from 'react-router-dom';
+import auth from "../../firebase.init";
 
-const login = () => {
+const Login = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (user) {
+        return (
+            <Navigate to="/" />
+        );
+    }
     return (
         <div>
-            <h1 className="text-3xl">login</h1>
-            <form className='m-4 flex flex-col justify-center items-center'>
-                <input type="email" placeholder="Email" class="input input-bordered input-dark w-full max-w-xs m-2" />
-                <input type="password" placeholder="Password" class="input input-bordered input-dark w-full max-w-xs m-2" />
-                <div className="submit">
-                    <button class="btn m-2" type='submit'>Login</button>
-                    <button class="btn">Google</button>
-                </div>
-            </form>
+            <h1 className="text-3xl">Login</h1>
+            <button className="btn m-8 text-xl" onClick={() => signInWithGoogle()}>Sign In With Google</button>
         </div>
     );
 };
 
-export default login;
+export default Login;

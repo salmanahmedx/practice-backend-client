@@ -1,0 +1,5 @@
+install tailwind
+install daisy
+tailwind.config.js modify
+app.css --> add 3x tailwind lines as required
+Done!
