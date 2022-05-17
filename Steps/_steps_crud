@@ -1,0 +1,9 @@
+CRUD - CREATE | READ | UPDATE | DELETE
+
+Get Operations: READ
+
+1. Server side get api that displays all the products without req from client.
+
+2. Request from client to get all the product details and display in UI
+
+
