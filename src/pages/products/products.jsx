@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import getProducts from '../hooks/products';
 const Products = () => {
-
-    //get and display all products
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/products`)
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
-
-
+    const [products] = getProducts();
     return (
         <div>
             <h1 className="text-5xl pb-5">Products</h1>
@@ -25,13 +16,15 @@ const Products = () => {
                                 }
                             </select>
                             <div className="card-actions justify-center m-3">
-                                <button className="btn btn-sm">Submit</button>
+                                <Link to={`/products/${product._id}`}>
+                                    <button className="btn btn-sm">Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>)
                 }
             </div>
-        </div>
+        </div >
     );
 };
 

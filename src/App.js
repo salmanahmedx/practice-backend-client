@@ -5,6 +5,7 @@ import Login from './pages/authentication/login';
 import Products from './pages/products/products';
 import Navbar from './pages/navbar/navbar';
 import RequireAuth from './pages/authentication/requireAuth';
+import ProductsDetails from './pages/products/productsDetails';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path="login" element={<Login />} ></Route>
-        <Route path="products" element={<Products />}></Route>
+        <Route path="products" element={<Products />}>
+        </Route>
+        <Route path="products/:id" element={<ProductsDetails></ProductsDetails>}></Route>
       </Routes>
     </div>
   );
