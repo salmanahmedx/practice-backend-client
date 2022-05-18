@@ -1,6 +1,6 @@
 CRUD - CREATE | READ | UPDATE | DELETE
 
-GET Operations: READ
+GET Operations: READ ============================================
 
 1. Server side get api that displays all the products without req from client.
 
@@ -8,7 +8,7 @@ GET Operations: READ
 
 \*\* error 400 - bad request happens when you send wrong data
 
-PUT Operations: UPDATE
+PUT Operations: UPDATE =========================================
 
 1. Updated Details has to be in this format: { x : y } or else 400 error
 
@@ -21,3 +21,13 @@ Server Side:
 1. Use id or specifics as filter
 
 2. must add const option = {upsert: true}
+
+DELETE operation ================================================
+
+1. app.delete()
+
+2. Send the ID to handleDelete function
+
+3. then(async res => {
+   const data = await res.json()
+   })
