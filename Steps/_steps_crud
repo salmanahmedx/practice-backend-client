@@ -1,9 +1,23 @@
 CRUD - CREATE | READ | UPDATE | DELETE
 
-Get Operations: READ
+GET Operations: READ
 
 1. Server side get api that displays all the products without req from client.
 
 2. Request from client to get all the product details and display in UI
 
+\*\* error 400 - bad request happens when you send wrong data
 
+PUT Operations: UPDATE
+
+1. Updated Details has to be in this format: { x : y } or else 400 error
+
+2. Sending these details through body and make sure to do JSON.stringify(details)
+
+3. method: "PUT", headers: "content-type": "application/json"
+
+Server Side:
+
+1. Use id or specifics as filter
+
+2. must add const option = {upsert: true}
